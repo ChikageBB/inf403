@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         Warrior p1 = new Warrior("Geralt", 34);
-        Wizard p2 = new Wizard("Triss", 25);
+        Wizard p2 = new Wizard("E", 25);
 
         p1.printInfo();
         p2.printInfo();

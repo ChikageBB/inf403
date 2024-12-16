@@ -1,6 +1,6 @@
 package ru.itis.inf403.task09.model;
 
-import com.sun.source.tree.ProvidesTree;
+
 
 public class Human extends Entity{
     protected int HP = 100;
