@@ -18,11 +18,10 @@ public class Main {
             try{
                 Scanner input = new Scanner(System.in);
                 String login = input.nextLine();
+                if (login.equals("exit")){System.exit(0);}
                 String password = input.nextLine();
+                if (password.equals("exit")){System.exit(0);}
                 Role r = userCheck(login, password, users);
-                if (login.equals("exit") || password.equals("exit")){
-                    System.exit(0);
-                }
                 if (r== null) {
                     throw new RuntimeException("Неправильный пароль");
                 }
