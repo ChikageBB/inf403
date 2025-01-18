@@ -9,8 +9,9 @@ public class Main {
 
 
         User[] users = new User[]{
-                new User("IvanPupkin", "IvanPupkin1000", Role.ADMIN),
-                new User("SeregaPreshkin", "12142141", Role.USER)
+                new User("ivanpupkin@1992_12.12","12208888", Role.ADMIN),
+                new User("ivanpupkin@121_134.12", "10001111ada", Role.ADMIN),
+                new User("SeregaPreshkin12314add", "12142141aa", Role.USER)
         };
 
         while (true){
@@ -39,9 +40,11 @@ public class Main {
                     break;
                 }
             }catch (WrongPasswordException e){
-                System.out.println("Неправильный пароль");
+                //System.out.println("Password должен содержать не менее 8 символов: латинские буквы, цифры и {}[](),.;&?!_-+");
+                System.out.println(e.getMessage());
             }catch (WrongLoginException e){
-                System.out.println("Неправильный логин");
+                System.out.println(e.getMessage());
+                //System.out.println("Login должен содержать не менее 20 символов: латинскиx букв прописных и строчных, цифр и символов @ . _ -");
             }
         }
     }
@@ -57,11 +60,11 @@ public class Main {
         Matcher matcherLogin = patternLogin.matcher(login);
 
         if (!matcherLogin.find()){
-            throw new WrongLoginException();
+            throw new WrongLoginException("Password должен содержать не менее 8 символов: латинские буквы, цифры и {}[](),.;&?!_-+");
         }
 
         if (!matcherPassword.find()){
-            throw  new WrongPasswordException();
+            throw  new WrongPasswordException("Login должен содержать не менее 20 символов: латинскиx букв прописных и строчных, цифр и символов @ . _ -");
         }
 
         for (int i = 0; i < users.length; i++){
