@@ -1,14 +1,11 @@
 package ru.itis.inf403.lab12.model;
 
-
-import java.util.LinkedList;
-
+import java.util.Collections;
 
 public class DoubleLinkedList {
     private Node head;
     private Node tail;
     private int size;
-
 
     public void addFirst(Apple apple){
         Node newNode = new Node(apple);

@@ -18,5 +18,8 @@ public class Main {
         list.forwardSort();
         list.print();
 
+        System.out.println("-----------");
+        list.removeLast();
+        list.print();
     }
 }
